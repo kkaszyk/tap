@@ -16,3 +16,6 @@
 
 #bindir
 bin/
+
+#large traces
+traces/fast_trace*
