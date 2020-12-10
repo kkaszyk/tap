@@ -10,7 +10,7 @@ make run
 # pat 
 The PAT trace format is composed of a number of tokens, which are as follows:
 
-**Header:**
+**Dimensions:**
 *JD* jx jy jz wx wy wz
 
 **Thread ID:**
