@@ -11,7 +11,7 @@ make run
 The PAT trace format is composed of a number of tokens, which are as follows:
 
 **Dimensions:**
-*JD* jx jy jz wx wy wz
+*D* #wkgrps_x #wkgrps_y #wkgrps_z wkgrp_size_x wkgrp_size_y wkgrp_size_z
 
 **Thread ID:**
 *T* tid
