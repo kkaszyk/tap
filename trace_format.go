@@ -5,13 +5,13 @@ import (
     "strings"
 )
 
-type JDTraceEntry struct {
-    jx uint64
-    jy uint64
-    jz uint64
-    wx uint64
-    wy uint64
-    wz uint64
+type DimTraceEntry struct {
+    num_wkgrps_x uint64
+    num_wkgrps_y uint64
+    num_wkgrps_z uint64
+    wkgrp_size_x uint64
+    wkgrp_size_y uint64
+    wkgrp_size_z uint64
 }
 
 type ArithmeticTraceEntry struct {
@@ -36,7 +36,7 @@ type LoadTraceEntry struct {
     trace_entry ArithmeticTraceEntry
 }
 
-func NewJDTraceEntry(entry string) JDTraceEntry {
+func NewDimTraceEntry(entry string) DimTraceEntry {
     e := strings.Split(entry, " ")
     jx, _ := strconv.ParseUint(e[1], 16, 64)
     jy, _ := strconv.ParseUint(e[2], 16, 64)
@@ -44,7 +44,7 @@ func NewJDTraceEntry(entry string) JDTraceEntry {
     wx, _ := strconv.ParseUint(e[4], 16, 64)
     wy, _ := strconv.ParseUint(e[5], 16, 64)
     wz, _ := strconv.ParseUint(e[6], 16, 64)
-    return JDTraceEntry{jx, jy, jz, wx, wy, wz}
+    return DimTraceEntry{jx, jy, jz, wx, wy, wz}
 }
 
 func NewLoadTraceEntry(e string) LoadTraceEntry{

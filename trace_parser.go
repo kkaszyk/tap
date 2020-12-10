@@ -22,8 +22,8 @@ func parse(s *bufio.Scanner, threadTraces *map[uint64][]interface{}) {
             trace_entry := strings.Split(e, " ")
             tid, _ = strconv.ParseUint(trace_entry[1],16,64)
             threadTraceMap[tid] = make([]interface{},0, 100)
-        case 'J':
-            NewJDTraceEntry(e)
+        case 'D':
+            NewDimTraceEntry(e)
         case 'P':
             threadTraceMap[tid] = append(threadTraceMap[tid], NewArithmeticTraceEntry([]rune(e)[2:]))
         case 'L':
